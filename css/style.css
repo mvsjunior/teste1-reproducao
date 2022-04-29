@@ -1,0 +1,337 @@
+
+/* Estilização geral */
+body ,ul{ 
+    box-sizing: border-box;
+    font-family: arial;
+    margin:0;
+    padding:0;
+    background-color: #fff;
+    list-style: none;
+    color:#333;
+}
+
+h1 {
+    font-size:26pt;
+    text-align: center;
+    }
+
+p { font-size:14pt;}
+
+a {
+    color:#222;
+    text-decoration: none;
+}
+
+/* imagens */ 
+img {max-width: 100%;}
+
+.img-circle {
+    border-radius:100%;
+    width:200px;
+    height:200px;
+
+}
+
+.img-icon-24 {
+    width:32px;
+    height:32px;
+}
+
+
+/* botões */
+.btn {padding:15px;border:none;border-radius: 50px; font-weight: bold; font-size: 14pt; cursor: pointer;}
+
+.btn-orange {background-color: #f38323; color:#fff; transition:.2s;}
+
+.btn-orange:hover {background-color: #d46401; transition:.5s;}
+
+
+/* CONTAINERS */
+.container-grid {
+    display:grid;
+    max-width: 1600px;
+    width:90%;
+    margin:auto;
+}
+
+
+
+/* 
+****************************************************
+                  SESSAO CABECALHO
+****************************************************
+*/
+header.container-grid {
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    grid-column-gap: 10px;
+    border:solid 1px #fff;
+    height:5vh;
+    min-height: 60px;
+    align-items: center;
+    justify-content:space-between ;
+}
+
+
+header .logo {display:block; min-width:120px; width: 120px;}
+
+/* Menu de navegação */
+header .nav-menu {
+    display:flex;
+    align-items: center;
+}
+
+
+header .nav-menu ul {
+    display:flex;
+    flex-wrap: wrap;
+    font-size: 11pt;
+}
+
+
+.nav-menu ul li {
+    margin:0px 5px ;
+}
+
+.nav-menu ul li a {
+    display:block;
+    padding: 5px 10px;
+
+}
+
+/* */
+
+/* telefone */
+header nav.nav-menu > a {
+    font-weight: bold;
+}
+
+
+/* MENU MOBILE */
+
+@media (max-width: 860px) {
+
+    header.container-grid {
+        box-sizing: border-box;
+        background-color:#fff;
+        color:#333;
+        width:100%;
+        border:none;
+        height: auto;
+        max-height: auto;
+        position: fixed;
+        justify-content: space-around;
+        box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    }
+
+    header img.logo { width:80px; min-width: 80px;}
+
+    .nav-menu > a {display:none;}
+    .nav-menu > img {display:none;}
+
+    nav.nav-menu {display:block; padding:10px;}
+
+    nav.nav-menu ul {
+        flex-direction: column;
+        height:0vh;
+        overflow: hidden;
+        transition: .5s;
+        padding-top:10px;
+    }
+
+    nav.nav-menu ul li a{ 
+        color: #333;
+        margin-top:10px;
+    }
+    
+    nav.nav-menu:hover > ul {
+        min-height: auto;
+        height: auto;
+    }
+
+    nav.nav-menu::before {
+        content:"MENU";
+        font-weight: bold;
+        font-size: 16pt;
+        width: 32px;
+        height:32px;
+        border-bottom: solid #333 5px;
+        z-index: 2;
+        padding:5px;
+
+    }
+
+    .banner-area {padding-top:20px;}
+    
+}
+
+
+/* 
+****************************************************
+                  SESSAO BANNER
+****************************************************
+*/
+
+.banner-area .banner-bg{
+    width:100%;
+    height:auto;
+    background-image: url("../img/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner-text {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 300px;
+    padding:5%;
+    margin:auto;
+    color:#fff;
+    background-color:rgba(0,0,0,.4);
+}
+
+.banner-text p{
+    text-align: center;
+    width:60vw;
+    max-width: 60vw;
+
+}
+
+
+
+
+/* 
+****************************************************
+                  SESSAO SERVICOS
+****************************************************
+*/
+section.servicos {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4vw;
+    text-align: center;
+    padding:4% 0;
+}
+
+section.servicos > div{
+    min-width: 200px;
+}
+
+/* Responsividade da "SESSAO SERVICOS" */
+@media (max-width: 1000px) {
+    section.servicos {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8vw;
+        text-align: center;
+        padding:4% 0;
+    }
+}
+
+    @media (max-width: 600px) {
+        section.servicos {
+            display:flex;
+            flex-wrap: wrap;
+            max-width: 300px;
+        }
+
+}
+
+
+
+/* 
+****************************************************
+                  SESSAO SOBRE
+****************************************************
+*/
+
+section.sobre {
+    width:100%;
+    background-color: #f1f3f4;
+
+}
+
+section.sobre > div{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    width:90%;
+    max-width:90%;
+    margin:auto;
+
+}
+
+
+section.sobre div > div {
+    display:grid;
+    grid-gap:20px;
+    padding:10px;
+    justify-items: left;
+}
+
+/* Responsividade da "SESSAO SOBRE" */
+@media (max-width: 800px){
+
+    section.sobre > div{ 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+/* 
+****************************************************
+             SESSAO "ULTIMAS DO BLOG"
+****************************************************
+*/
+
+.ultimas-blog {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    padding:5vh 0;
+}
+
+.ultimas-blog div {
+    background-color: #f1f3f4;
+    min-width: 200px;
+
+}
+.ultimas-blog div :nth-child(n+2) {
+    padding: 0 20px;
+
+}
+
+/* Responsividade da "SESSAO ULTIMAS DO BLOG" */
+@media (max-width: 1000px) {
+    .ultimas-blog {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8vw;
+        padding:5vh 0;
+    }   
+}
+
+@media (max-width: 600px) {
+    .ultimas-blog {
+        display:flex;
+        flex-wrap: wrap;
+        max-width: 300px;
+    }   
+}
+
+
+/* 
+****************************************************
+                  SESSAO FOOTER
+****************************************************
+*/
+
+footer {
+    display:flex;
+    width:100%;
+    height:5vh;
+    background-color:#222;
+    color:#fff;
+    text-align: center;
+}
+
+footer p {font-size: 11pt; margin:auto;}
